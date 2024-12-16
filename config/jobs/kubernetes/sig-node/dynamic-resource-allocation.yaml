@@ -5,7 +5,7 @@ periodics:
     cluster: eks-prow-build-cluster
     interval: 6h
     annotations:
-      testgrid-dashboards: sig-release-master-informing, sig-node-dynamic-resource-allocation
+      testgrid-dashboards: sig-release-master-blocking, sig-node-release-blocking, sig-node-dynamic-resource-allocation
       testgrid-tab-name: ci-kind-dra
       description: Runs E2E tests for Dynamic Resource Allocation beta features against a Kubernetes master cluster created with sigs.k8s.io/kind
       testgrid-alert-email: patrick.ohly@intel.com,release-team@kubernetes.io
@@ -111,7 +111,7 @@ periodics:
     cluster: k8s-infra-prow-build
     interval: 6h
     annotations:
-      testgrid-dashboards: sig-release-master-informing, sig-node-cri-o, sig-node-dynamic-resource-allocation
+      testgrid-dashboards: sig-release-master-blocking, sig-node-release-blocking, sig-node-cri-o, sig-node-dynamic-resource-allocation
       testgrid-tab-name: ci-node-e2e-cgrpv1-crio-dra
       description: Runs E2E node tests for Dynamic Resource Allocation beta features with CRI-O using cgroup v1
       testgrid-alert-email: eduard.bartosh@intel.com,patrick.ohly@intel.com,release-team@kubernetes.io
@@ -166,7 +166,7 @@ periodics:
     cluster: k8s-infra-prow-build
     interval: 6h
     annotations:
-      testgrid-dashboards: sig-release-master-informing, sig-node-cri-o, sig-node-dynamic-resource-allocation
+      testgrid-dashboards: sig-release-master-blocking, sig-node-release-blocking, sig-node-cri-o, sig-node-dynamic-resource-allocation
       description: Runs E2E node tests for Dynamic Resource Allocation beta features with CRI-O using cgroup v2
       testgrid-tab-name: ci-node-e2e-cgrpv2-crio-dra
       testgrid-alert-email: eduard.bartosh@intel.com,patrick.ohly@intel.com,release-team@kubernetes.io
@@ -221,7 +221,7 @@ periodics:
     cluster: k8s-infra-prow-build
     interval: 6h
     annotations:
-      testgrid-dashboards: sig-release-master-informing, sig-node-dynamic-resource-allocation
+      testgrid-dashboards: sig-release-master-blocking, sig-node-release-blocking, sig-node-dynamic-resource-allocation
       testgrid-tab-name: ci-node-e2e-containerd-1-7-dra
       description: Runs E2E node tests for Dynamic Resource Allocation beta features with containerd
       testgrid-alert-email: eduard.bartosh@intel.com,patrick.ohly@intel.com,release-team@kubernetes.io

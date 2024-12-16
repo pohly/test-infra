@@ -3194,7 +3194,7 @@ presubmits:
     skip_branches:
     - release-\d+\.\d+  # per-release image
     annotations:
-      testgrid-dashboards: sig-node-presubmits, sig-node-dynamic-resource-allocation
+      testgrid-dashboards: presubmits-kubernetes-blocking, sig-node-presubmits, sig-node-dynamic-resource-allocation
       testgrid-tab-name: pr-kind-dra
     decorate: true
     path_alias: k8s.io/kubernetes
@@ -3203,7 +3203,6 @@ presubmits:
     # This covers most of the code related to dynamic resource allocation.
     # Periodic variant: ci-kind-dra
     run_if_changed: /(dra|dynamicresources|resourceclaim|deviceclass|resourceslice|resourceclaimtemplate|dynamic-resource-allocation|pkg/apis/resource|api/resource)/.*.go
-    optional: true
     decoration_config:
       timeout: 90m
     labels:
@@ -4280,7 +4279,6 @@ presubmits:
     # CRI-O was picked because it was solid for testing so far.
     # Periodic variant: ci-node-e2e-crio-cgrpv1-dra-features
     run_if_changed: (/dra/|/dynamicresources/|/resourceclaim/|/deviceclass/|/resourceslice/|/resourceclaimtemplate/|/dynamic-resource-allocation/|/pkg/apis/resource/|/api/resource/|/test/e2e_node/dra_).*\.(go|yaml)
-    optional: true
     skip_report: false
     labels:
       preset-service-account: "true"
@@ -4288,7 +4286,7 @@ presubmits:
       preset-pull-kubernetes-e2e: "true"
       preset-pull-kubernetes-e2e-gce: "true"
     annotations:
-      testgrid-dashboards: sig-node-cri-o, sig-node-presubmits, sig-node-dynamic-resource-allocation
+      testgrid-dashboards: presubmits-kubernetes-blocking, sig-node-cri-o, sig-node-presubmits, sig-node-dynamic-resource-allocation
       testgrid-tab-name: pr-node-kubelet-crio-cgrpv1-dra
     decorate: true
     decoration_config:
@@ -4390,7 +4388,6 @@ presubmits:
     # CRI-O was picked because it was solid for testing so far.
     # Periodic variant: ci-node-e2e-cgrpv2-crio-dra
     # run_if_changed: (/dra/|/dynamicresources/|/resourceclaim/|/deviceclass/|/resourceslice/|/resourceclaimtemplate/|/dynamic-resource-allocation/|/pkg/apis/resource/|/api/resource/|/test/e2e_node/dra_).*\.(go|yaml)
-    optional: true
     skip_report: false
     labels:
       preset-service-account: "true"
@@ -4398,7 +4395,7 @@ presubmits:
       preset-pull-kubernetes-e2e: "true"
       preset-pull-kubernetes-e2e-gce: "true"
     annotations:
-      testgrid-dashboards: sig-node-cri-o, sig-node-presubmits, sig-node-dynamic-resource-allocation
+      testgrid-dashboards: sig-node-cri-o, sig-node-presubmits, sig-node-dynamic-resource-allocation # presubmits-kubernetes-blocking
       testgrid-tab-name: pr-node-kubelet-crio-cgrpv2-dra
     decorate: true
     decoration_config:
@@ -4499,13 +4496,12 @@ presubmits:
     # CRI-O was picked because it was solid for testing so far.
     # Periodic variant: ci-node-e2e-containerd-1-7-dra
     # run_if_changed: (/dra/|/dynamicresources/|/resourceclaim/|/deviceclass/|/resourceslice/|/resourceclaimtemplate/|/dynamic-resource-allocation/|/pkg/apis/resource/|/api/resource/|/test/e2e_node/dra_).*\.(go|yaml)
-    optional: true
     skip_report: false
     labels:
       preset-service-account: "true"
       preset-k8s-ssh: "true"
     annotations:
-      testgrid-dashboards: sig-node-presubmits, sig-node-dynamic-resource-allocation
+      testgrid-dashboards: sig-node-presubmits, sig-node-dynamic-resource-allocation # presubmits-kubernetes-blocking
       testgrid-tab-name: pr-node-kubelet-containerd-dra
     decorate: true
     decoration_config:
